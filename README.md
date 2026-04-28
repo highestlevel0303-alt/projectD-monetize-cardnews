@@ -5,6 +5,22 @@
 
 ---
 
+## 📦 풀 패키지
+
+이 repo에는 **무료강의 시연용 풀 패키지**가 다 들어있습니다:
+
+| 파일 | 용도 |
+|---|---|
+| **`projectD-monetize-FINAL.mp4`** (27MB) | 메인 시연 영상 — Claude Code로 만든 흐름 1부터 10까지 |
+| **`projectD-monetize-FULL-TUTORIAL.mp4`** (12MB) | 따라하기 영상 — 7단계 STEP-BY-STEP |
+| **`LIVE_TUTORIAL.md`** | 강의 시연 스크립트 — 강사가 라이브에서 그대로 보고 시연 |
+| **`PROMPT.md`** | 마스터 프롬프트 — 자기 버전 만들기용 |
+| **`projectD-monetize-01.html`** | 12장 슬라이드 메인 HTML |
+| **`convert-projectD-monetize.mjs`** | puppeteer PNG 12장 자동 렌더 |
+| 이미지 11종 | 저커버그·Mosseri·Meta·TechCrunch 등 |
+
+---
+
 ## 사용법 (3분 컷)
 
 ### 1. 다운로드
