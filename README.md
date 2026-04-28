@@ -13,6 +13,7 @@
 |---|---|
 | **`projectD-monetize-FINAL.mp4`** (27MB) | 메인 시연 영상 — Claude Code로 만든 흐름 1부터 10까지 |
 | **`projectD-monetize-FULL-TUTORIAL.mp4`** (12MB) | 따라하기 영상 — 7단계 STEP-BY-STEP |
+| **`TEMPLATE_GUIDE.md`** ⭐ | **다운로드 → 적용 → 본인 버전 변형 풀 가이드** (디자인 영구지침 + 카피 영구지침 + 6단계 변형 체크리스트) |
 | **`LIVE_TUTORIAL.md`** | 강의 시연 스크립트 — 강사가 라이브에서 그대로 보고 시연 |
 | **`PROMPT.md`** | 마스터 프롬프트 — 자기 버전 만들기용 |
 | **`projectD-monetize-01.html`** | 12장 슬라이드 메인 HTML |
