@@ -1,0 +1,16 @@
+{
+  "name": "projectd-monetize-cardnews",
+  "version": "1.0.0",
+  "description": "60만뷰 인스타 수익화 카드뉴스 12장 (마크 저커버그 버전) · @highestlevel33",
+  "type": "module",
+  "scripts": {
+    "render": "node convert-projectD-monetize.mjs",
+    "start": "node convert-projectD-monetize.mjs"
+  },
+  "dependencies": {
+    "puppeteer": "^23.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

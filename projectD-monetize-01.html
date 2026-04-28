@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@highestlevel33 — 인스타 수익화 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --dark: #111111;
+    --dark-sub: rgba(17,17,17,0.48);
+    --dark-mid: rgba(17,17,17,0.82);
+    --accent: #E1306C;
+    --accent-soft: #FCE4EC;
+    --slide-w: 1080px;
+    --slide-h: 1350px;
+    --pad: 64px;
+    --font: 'Noto Sans KR', -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #eee; display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 40px 0; font-family: var(--font); color: var(--dark); word-break: keep-all; -webkit-font-smoothing: antialiased; }
+  .slide { width: var(--slide-w); height: var(--slide-h); min-height: var(--slide-h); flex-shrink: 0; position: relative; overflow: hidden; background: var(--bg); }
+
+  /* 커버 (영구지침 top:73% / 94px / -4px) · @highestlevel33 피드 톤 (검정+보라) */
+  .cover-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+  .cover-overlay { position: absolute; inset: 0; background:
+    linear-gradient(180deg, rgba(10,8,18,0.35) 0%, transparent 30%, transparent 50%, rgba(10,8,18,0.88) 100%),
+    linear-gradient(135deg, rgba(131,58,180,0.18) 0%, rgba(10,8,18,0.45) 100%); }
+  .cover-kicker { position: absolute; top: 66%; left: 0; right: 0; text-align: center; font-size: 22px; font-weight: 700; color: #fff; letter-spacing: 4px; text-transform: uppercase; text-shadow: 0 2px 10px rgba(0,0,0,0.3); z-index: 5; }
+  .cover-headline { position: absolute; top: 73%; left: 0; right: 0; font-size: 94px; font-weight: 900; line-height: 1.12; letter-spacing: -4px; color: #fff; text-align: center; text-shadow: 0 4px 24px rgba(0,0,0,0.5); padding: 0 48px; z-index: 5; }
+  .cover-brand { position: absolute; bottom: 56px; left: 0; right: 0; text-align: center; font-size: 21px; font-weight: 700; color: rgba(255,255,255,0.95); letter-spacing: 3px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); z-index: 5; }
+
+  /* 매거진 */
+  .mag { display: flex; flex-direction: column; }
+  .mag-header { position: absolute; top: 0; left: 0; right: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; padding: 36px var(--pad); }
+  .mag-badge { background: var(--accent); color: #fff; font-size: 18px; font-weight: 700; padding: 9px 22px; border-radius: 30px; letter-spacing: 1px; }
+  .mag-brand { font-size: 18px; font-weight: 500; color: var(--dark-sub); letter-spacing: 1px; }
+  .mag-photo { width: 100%; height: 48%; position: relative; overflow: hidden; background: var(--accent-soft); }
+  .mag-photo img { width: 100%; height: 100%; object-fit: contain; object-position: center center; background: var(--accent-soft); }
+  .mag-text { flex: 1; padding: 46px var(--pad) 56px; display: flex; flex-direction: column; background: var(--bg); }
+  .mag-section { font-size: 17px; font-weight: 700; color: var(--accent); letter-spacing: 3px; margin-bottom: 12px; text-transform: uppercase; }
+  .mag-divider { width: 44px; height: 3px; background: var(--accent); margin-bottom: 22px; border-radius: 2px; }
+  .mag-title { font-size: 52px; font-weight: 900; line-height: 1.18; color: var(--dark); margin-bottom: 26px; letter-spacing: -2px; }
+  .mag-body { font-size: 27px; font-weight: 500; line-height: 1.58; color: var(--dark-mid); }
+  .mag-body b { font-weight: 800; color: var(--dark); }
+  .mag-body .hl { color: var(--accent); font-weight: 800; }
+  .mag-body p { margin-bottom: 14px; }
+  .mag-body p:last-child { margin-bottom: 0; }
+  .mag-source { font-size: 15px; color: rgba(17,17,17,0.38); margin-top: 22px; letter-spacing: 0.5px; font-weight: 500; }
+  .mag-watermark { position: absolute; bottom: 24px; right: var(--pad); font-size: 15px; color: var(--accent); font-weight: 700; letter-spacing: 1.5px; display: flex; align-items: center; gap: 6px; opacity: 0.75; }
+
+  /* 영상 슬라이드 */
+  .mag.has-video .mag-photo { height: 60%; }
+  .mag.has-video .mag-text { padding: 40px var(--pad) 48px; }
+  .video-photo { background: #000; }
+  .video-photo video { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
+  .video-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 44px 32px; pointer-events: none; background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.3) 65%, rgba(0,0,0,0.9) 92%, rgba(0,0,0,0.98) 100%); }
+  .video-overlay-kicker { font-size: 15px; font-weight: 700; color: #fff; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 12px; opacity: 0.88; }
+  .video-overlay-head { font-size: 50px; font-weight: 900; line-height: 1.12; letter-spacing: -2px; background: linear-gradient(90deg, #F77737 0%, #E1306C 50%, #C13584 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 2px 14px rgba(0,0,0,0.25); }
+  .video-play-indicator { position: absolute; top: 22px; left: 22px; background: rgba(0,0,0,0.55); color: #fff; font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 20px; letter-spacing: 1px; display: flex; align-items: center; gap: 4px; z-index: 3; }
+  .video-play-indicator::before { content: '▶'; font-size: 9px; }
+
+  /* CTA */
+  .cta { background: linear-gradient(135deg, #E1306C 0%, #C13584 50%, #833AB4 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 var(--pad); text-align: center; color: #fff; gap: 28px; }
+  .cta-brand { font-size: 24px; font-weight: 300; letter-spacing: 6px; color: rgba(255,255,255,0.85); }
+  .cta-divider { width: 52px; height: 2px; background: #fff; opacity: 0.6; }
+  .cta-head { font-size: 58px; font-weight: 800; line-height: 1.28; letter-spacing: -2px; margin-top: 8px; }
+  .cta-keyword { background: #fff; color: var(--accent); font-size: 32px; font-weight: 900; padding: 22px 56px; border-radius: 50px; letter-spacing: 2px; box-shadow: 0 20px 50px rgba(0,0,0,0.25); margin-top: 8px; }
+  .cta-sub-line { font-size: 22px; color: rgba(255,255,255,0.95); font-weight: 600; line-height: 1.55; margin-top: -6px; }
+  .cta-dm-line { font-size: 17px; color: rgba(255,255,255,0.72); font-weight: 500; letter-spacing: 0.3px; margin-top: -4px; }
+</style>
+</head>
+<body>
+
+<!-- 1 커버 · 여자 사진 + 분홍 오버레이 + 수치 훅 -->
+<div class="slide">
+  <img class="cover-photo" src="zuckerberg-portrait-hd.jpg" alt="Mark Zuckerberg · Meta CEO">
+  <div class="cover-overlay"></div>
+  <div class="cover-kicker">2026 인스타 수익화 공식 6가지</div>
+  <div class="cover-headline">팔로워 500명부터<br>인스타가 돈 준다</div>
+  <div class="cover-brand">@highestlevel33</div>
+</div>
+
+<!-- 2 #01 THE SHIFT -->
+<div class="slide mag">
+  <div class="mag-header"><span class="mag-badge">#01 THE SHIFT</span><span class="mag-brand">@highestlevel33</span></div>
+  <div class="mag-photo"><img src="meta-fast-track-hero.jpg" alt="Meta Creator Fast Track 공식 발표"></div>
+  <div class="mag-text">
+    <div class="mag-section">왜 지금 · 2026</div>
+    <div class="mag-divider"></div>
+    <div class="mag-title">Meta가 작년<br>크리에이터에게 4조원</div>
+    <div class="mag-body">
+      <p>Meta(인스타·페북)가 작년 크리에이터한테 <b>4조원</b>을 지급했어요.<br>전년 대비 <span class="hl">+35%</span>, 역대 최고 금액.</p>
+      <p>이유는 릴스예요. 인스타에서 사람들이 <b>보내는 시간의 절반</b>이 릴스.<br>광고의 <b>절반 이상</b>도 릴스에 붙어요.</p>
+      <p>이 광고 수익 중 일부가 <span class="hl">크리에이터 지갑으로 돌아와요</span>.<br>단, <b>받는 법을 아는 사람만</b>.</p>
+    </div>
+    <div class="mag-source">출처 · Meta about.fb.com / CNBC 2026-03 / Zuckerberg 실적발표</div>
+  </div>
+  <div class="mag-watermark">🔖 저장 · @highestlevel33</div>
+</div>
+
+<!-- 3 #02 CEO SPEAKS (영상) -->
+<div class="slide mag has-video">
+  <div class="mag-header"><span class="mag-badge">#02 CEO SPEAKS</span><span class="mag-brand">@highestlevel33</span></div>
+  <div class="mag-photo video-photo">
+    <video src="yt-fb-fasttrack-clip.mp4" poster="meta-fast-track-hero.jpg" autoplay muted loop playsinline></video>
+    <div class="video-play-indicator">OFFICIAL · META</div>
+    <div class="video-overlay">
+      <div class="video-overlay-kicker">Facebook for Creators · 2026-03-18</div>
+      <div class="video-overlay-head">Meta가 직접 발표한<br>Creator Fast Track</div>
+    </div>
+  </div>
+  <div class="mag-text">
+    <div class="mag-section">Meta 공식 영상</div>
+    <div class="mag-divider"></div>
+    <div class="mag-title">팔로워 10만이면<br>매달 140만원 받기</div>
+    <div class="mag-body">
+      <p>Meta가 2026년 3월 직접 발표한 <b>Creator Fast Track</b>.<br>팔로워 <b>10만</b> = 매달 <span class="hl">140만원</span>, <b>100만</b> = 매달 <span class="hl">420만원</span>.</p>
+      <p>조건은 쉬워요. 한 달에 <b>릴스 15개</b>를<br>Facebook에 올리기 (10일 이상 나눠서).</p>
+      <p>인스타·틱톡·유튜브에 이미 올린 거 <b>그대로 다시 올려도 OK</b>.<br>독점 계약 안 해도 돼요.</p>
+    </div>
+    <div class="mag-source">출처 · Facebook for Creators 공식 영상 / about.fb.com/news/2026/03</div>
+  </div>
+  <div class="mag-watermark">🔖 저장 · @highestlevel33</div>
+</div>
+
+<!-- 4 #03 GIFTS -->
+<div class="slide mag">
+  <div class="mag-header"><span class="mag-badge">#03 GIFTS</span><span class="mag-brand">@highestlevel33</span></div>
+  <div class="mag-photo"><img src="tc-instagram-gifts.png" alt="Instagram Gifts UI 공식"></div>
+  <div class="mag-text">
+    <div class="mag-section">팔로워 500명부터</div>
+    <div class="mag-divider"></div>
+    <div class="mag-title">팔로워 500명이면<br>바로 돈 벌 수 있다</div>
+    <div class="mag-body">
+      <p>내 릴스에 시청자가 <b>'스타' 아이템</b>을 보내면<br>그게 <span class="hl">현금으로 바뀌어요</span>. 스타 1개 = <b>약 13원</b>.</p>
+      <p>인스타가 떼는 수수료 <span class="hl">0원</span>.<br>3만원(스타 2,500개) 모이면 출금 가능.</p>
+      <p>한국 공식 지원. 미국·일본·인도 <b>같은 대우</b>예요.<br>지금 바로 시작 가능한 <b>가장 쉬운 수익화</b>.</p>
+    </div>
+    <div class="mag-source">출처 · help.instagram.com/523408036294825 / TechCrunch 2023-02</div>
+  </div>
+  <div class="mag-watermark">🔖 저장 · @highestlevel33</div>
+</div>
+
+<!-- 5 #04 REELS BONUS -->
+<div class="slide mag">
+  <div class="mag-header"><span class="mag-badge">#04 REELS BONUS</span><span class="mag-brand">@highestlevel33</span></div>
+  <div class="mag-photo" style="background:#fff"><img src="tc-fb-phone.jpg" alt="TechCrunch Creator Fast Track" style="object-fit:cover;background:#fff"></div>
+  <div class="mag-text">
+    <div class="mag-section">릴스 보너스 · 초대제</div>
+    <div class="mag-divider"></div>
+    <div class="mag-title">릴스 하나로<br>1,100만원 번 사람</div>
+    <div class="mag-body">
+      <p>릴스 조회 <b>1,000회당 40~160원</b>을 지급해요.<br>조회수 <span class="hl">928만 찍은 릴스 하나가 $8,500</span> (약 1,100만원) 받은 사례.</p>
+      <p>자격: 계정을 <b>프로로 전환</b> + 최근 2개월 안에<br><b>오리지널 릴스 5개 이상</b> 업로드.</p>
+      <p>조건 맞으면 인스타에서 <span class="hl">초대 DM</span>이 와요.<br>그때부터 돈 쌓이기 시작.</p>
+    </div>
+    <div class="mag-source">출처 · creators.instagram.com/bonuses / TechCrunch / Tubefilter</div>
+  </div>
+  <div class="mag-watermark">🔖 저장 · @highestlevel33</div>
+</div>
+
+<!-- 6 #05 MARKETPLACE -->
+<div class="slide mag">
+  <div class="mag-header"><span class="mag-badge">#05 MARKETPLACE</span><span class="mag-brand">@highestlevel33</span></div>
+  <div class="mag-photo"><img src="ig-creator-skylar.jpg" alt="Instagram creators 공식 @skylarmarshai"></div>
+  <div class="mag-text">
+    <div class="mag-section">브랜드 딜 · 400배 차이</div>
+    <div class="mag-divider"></div>
+    <div class="mag-title">릴스 한 편에<br>6,600만원 받는 법</div>
+    <div class="mag-body">
+      <p>릴스 100만뷰로 인스타에서 직접 받는 돈은 <b>13~80만원</b>.<br>근데 같은 뷰를 브랜드 광고로 올리면 <span class="hl">400~6,600만원</span>. <b>최대 400배 차이</b>.</p>
+      <p>인스타의 <b>Creator Marketplace</b>에 등록만 하면<br>브랜드가 알아서 <b>DM으로 제안</b> 보내요. 팔로워 <span class="hl">1,000명부터</span> 가능.</p>
+      <p>제일 단가 좋은 구간은 <b>팔로워 5만~20만</b>.<br>포스트 한 개에 <span class="hl">140~700만원</span> 받을 수 있어요.</p>
+    </div>
+    <div class="mag-source">출처 · creators.instagram.com/earn-money/branded-content / Shopify 2026</div>
+  </div>
+  <div class="mag-watermark">🔖 저장 · @highestlevel33</div>
+</div>
+
+<!-- 7 #06 10K+ TIER -->
+<div class="slide mag">
+  <div class="mag-header"><span class="mag-badge">#06 10K+ TIER</span><span class="mag-brand">@highestlevel33</span></div>
+  <div class="mag-photo"><img src="ig-subs-creator.jpg" alt="Instagram Subscriptions 공식 @kelseylynncook"></div>
+  <div class="mag-text">
+    <div class="mag-section">팔로워 1만 · 3가지 추가</div>
+    <div class="mag-divider"></div>
+    <div class="mag-title">팔로워 1만부터<br>3가지 수익 열린다</div>
+    <div class="mag-body">
+      <p><b>① 구독</b> — 팬들이 매달 돈 내고 <b>내 전용 콘텐츠</b> 봐요.<br>월 1,000원~13만원 내가 직접 정함. 첫해 내 몫 70%, <span class="hl">2년차부터 85%</span>.</p>
+      <p><b>② 광고 수익 분배</b> — 내 릴스에 광고 붙이면<br>수익의 <span class="hl">55%</span>를 받아요 (인스타 45%).</p>
+      <p><b>③ 라이브 배지</b> — 라이브 중 팬이 <b>현금 선물</b> 보내요.<br>$0.99 / $1.99 / $4.99 3단계. 라이브 자주 하는 사람이 유리.</p>
+    </div>
+    <div class="mag-source">출처 · creators.instagram.com/earn-money/subscriptions / help.instagram.com</div>
+  </div>
+  <div class="mag-watermark">🔖 저장 · @highestlevel33</div>
+</div>
+
+<!-- 8 #07 NICHE CPM -->
+<div class="slide mag">
+  <div class="mag-header"><span class="mag-badge">#07 NICHE CPM</span><span class="mag-brand">@highestlevel33</span></div>
+  <div class="mag-photo"><img src="shopify-influencer-formula.png" alt="Shopify 인플루언서 단가 공식 2026"></div>
+  <div class="mag-text">
+    <div class="mag-section">주제별 단가 · 20배 차이</div>
+    <div class="mag-divider"></div>
+    <div class="mag-title">같은 10만 뷰도<br>주제 다르면 20배 차이</div>
+    <div class="mag-body">
+      <p>광고주가 주제별로 <b>내는 돈이 달라요</b>. 1,000뷰 기준:<br><b>돈·투자</b> <span class="hl">2~5만원</span> / <b>기술·비즈니스</b> 1.3~4만원.</p>
+      <p><b>건강·교육</b> 중간 9천원~3만원.<br><b>뷰티·패션</b> 5천~1.5만원 / <b>음식·엔터</b> 2천~9천원.</p>
+      <p>똑같이 10만뷰 나와도 <b>돈 주제 1개 = 음식 주제 20개</b>.<br>수익화에선 <span class="hl">주제가 팔로워보다 중요해요</span>.</p>
+    </div>
+    <div class="mag-source">출처 · InfluenceFlow 2026 / FiveBBC / Shopify Pricing 2026</div>
+  </div>
+  <div class="mag-watermark">🔖 저장 · @highestlevel33</div>
+</div>
+
+<!-- 9 #08 ALGORITHM -->
+<div class="slide mag">
+  <div class="mag-header"><span class="mag-badge">#08 ALGORITHM</span><span class="mag-brand">@highestlevel33</span></div>
+  <div class="mag-photo"><img src="mosseri-portrait-hd.jpg" alt="Adam Mosseri Instagram CEO 공식 HD 포트레이트" style="object-fit:cover"></div>
+  <div class="mag-text">
+    <div class="mag-section">Mosseri 공식 · 알고리즘</div>
+    <div class="mag-divider"></div>
+    <div class="mag-title">좋아요는 더 이상<br>중요하지 않다</div>
+    <div class="mag-body">
+      <p>인스타 CEO가 직접 밝힌 <b>2026 배포 기준</b>:<br><b>① 시청 시간</b> — 15초 릴스를 끝까지 보면 승부 끝.</p>
+      <p><b>② DM 공유</b> (친구에게 보내기) — <span class="hl">제일 중요</span>.<br><b>③ 저장</b> — 장기 팬 신호. 캐러셀에서 특히 강해요.</p>
+      <p><b>④ 댓글·공유</b> — 올린 지 1시간 안이 핵심.<br><b>⑤ 좋아요</b> — <span class="hl">이제 점수 많이 떨어졌어요</span>.</p>
+    </div>
+    <div class="mag-source">출처 · @mosseri 공식 Reel / 연말 메모 2025 / Buffer 2026 알고리즘 가이드</div>
+  </div>
+  <div class="mag-watermark">🔖 저장 · @highestlevel33</div>
+</div>
+
+<!-- 10 #09 POLICY SHIFT -->
+<div class="slide mag">
+  <div class="mag-header"><span class="mag-badge">#09 POLICY</span><span class="mag-brand">@highestlevel33</span></div>
+  <div class="mag-photo"><img src="smt-hashtag-limit.jpg" alt="@mosseri 공식 해시태그 5개 가이드"></div>
+  <div class="mag-text">
+    <div class="mag-section">2026 정책 변경 · 4가지</div>
+    <div class="mag-divider"></div>
+    <div class="mag-title">해시태그 30개 쓰던<br>시대는 끝났다</div>
+    <div class="mag-body">
+      <p><b>① 해시태그 5개까지만</b>. 기존 30개 → <span class="hl">5개</span> 제한.<br>2026년 1월부터 전 세계 적용 완료.</p>
+      <p><b>② 남의 영상 재업·워터마크 영상</b> 올리면<br><span class="hl">수익화 자격 박탈</span>. 오리지널 아니면 끝.</p>
+      <p><b>③ AI로 만든 인물·목소리</b>는 공개 의무.<br><b>④ 오가닉 성장률 -42%</b> — 자연 팔로우 증가가 반 토막.</p>
+    </div>
+    <div class="mag-source">출처 · @mosseri 공식 발표 2025-12-18 / Social Media Today / Metricool</div>
+  </div>
+  <div class="mag-watermark">🔖 저장 · @highestlevel33</div>
+</div>
+
+<!-- 11 #10 KOREA -->
+<div class="slide mag">
+  <div class="mag-header"><span class="mag-badge">#10 KOREA</span><span class="mag-brand">@highestlevel33</span></div>
+  <div class="mag-photo" style="background:#000"><img src="highestlevel33_1775918118_3873004057333423905_17768765353.jpg" alt="최고수준 @highestlevel33 · ASLS KOREA" style="object-fit:cover;object-position:center 65%"></div>
+  <div class="mag-text">
+    <div class="mag-section">한국 · 수익화 최적 시장</div>
+    <div class="mag-divider"></div>
+    <div class="mag-title">한국이<br>수익화 기회 1등이다</div>
+    <div class="mag-body">
+      <p>한국 인스타 쓰는 사람 <b>2,400만명</b> (국민 <span class="hl">절반</span>).<br>SNS 쓰는 비율 <b>93.4%</b>로 세계 3위.</p>
+      <p>여성 <b>86%</b>가 SNS 보고 구매 결정해요.<br>한국 인플루언서 시장 <b>6,500억원</b> → 2030년 <span class="hl">1조원+</span>.</p>
+      <p>그리고 결정적으로, 앞서 본 <span class="hl">6가지 수익화 전부 한국에서 가능</span>해요.<br>미국·일본과 <b>똑같은 대우</b>. 지금 시작 안 하면 손해.</p>
+    </div>
+    <div class="mag-source">출처 · InterAd 2026 한국 리포트 / Pix-Vu Seoul 2026 / 공정위 규정</div>
+  </div>
+  <div class="mag-watermark">🔖 저장 · @highestlevel33</div>
+</div>
+
+<!-- 12 CTA · 무료강의 연결 -->
+<div class="slide cta">
+  <div class="cta-brand">@highestlevel33</div>
+  <div class="cta-divider"></div>
+  <div class="cta-head">인스타 수익화 세팅<br>알고 싶다면?</div>
+  <div class="cta-sub-line">무료강의에서 6가지 전부 알려드립니다</div>
+  <div class="cta-keyword">댓글에 "최고수준"</div>
+  <div class="cta-dm-line">DM으로 무료강의 링크 바로 보내드립니다</div>
+</div>
+
+</body>
+</html>

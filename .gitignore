@@ -1,0 +1,19 @@
+node_modules/
+package-lock.json
+*.log
+.DS_Store
+Thumbs.db
+
+# 렌더 결과 PNG (사용자가 직접 생성)
+projectD-monetize-01.png
+projectD-monetize-02.png
+projectD-monetize-03.png
+projectD-monetize-04.png
+projectD-monetize-05.png
+projectD-monetize-06.png
+projectD-monetize-07.png
+projectD-monetize-08.png
+projectD-monetize-09.png
+projectD-monetize-10.png
+projectD-monetize-11.png
+projectD-monetize-12.png
